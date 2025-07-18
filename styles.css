@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #232421;
+  color: white;
+}
+
+main {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+.hero {
+  display: flex;
+}
+
+section {
+  min-height: 100vh;
+  scroll-snap-align: center;
+}
+
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  flex: 1;
+  padding: 48px 96px;
+}
+
+.right {
+  flex: 2;
+  padding: 48px;
+}
+
+#title_event {
+  text-align: center;
+  font-size: 96px;
+  font-family: 'Finger Paint', sans-serif;
+}
+#title_header {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 36px;
+}
+
+#title_author {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 16px;
+  text-align: right;
+}
+
+.circle-video {
+  width: 460px; /* Adjust size as needed */
+  aspect-ratio: 1;
+  border-radius: 50%; /* Makes it a circle */
+  border: 10px solid white;
+  box-shadow: 2px 2px 8px white, -2px -2px 8px white;
+  overflow: hidden; /* Hides anything outside the circle */
+  display: inline-block; /* Ensures it's treated as a block */
+  position: relative;
+}
+
+.circle-video video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#contents {
+  padding: 48px;
+}
+
+#content-title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 96px;
+  margin-bottom: 72px;
+  text-align: center;
+}
+
+.link-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 24px;
+}
+
+.link-container a,
+.card img {
+  transition: all 0.2s ease-in;
+  text-decoration: none;
+}
+
+.link-text {
+  color: white;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+  margin-top: 12px;
+}
+
+.link-container a:hover {
+  transform: scale(1.05);
+}
+
+.link-container a:hover .link-text {
+  text-decoration: underline;
+}
+.link-container a:hover img {
+  box-shadow: 2px 2px 8px white;
+}
