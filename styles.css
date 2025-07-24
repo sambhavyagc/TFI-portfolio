@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #232421;
+  background-color: #171716;
   color: white;
 }
 
@@ -14,6 +14,7 @@ main {
   overflow-y: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: y proximity;
+  font-family: 'Winkey Rough', sans-serif;
 }
 .hero {
   display: flex;
@@ -22,6 +23,14 @@ main {
 section {
   min-height: 100vh;
   scroll-snap-align: center;
+  position: relative;
+}
+
+section:first-of-type,
+section:last-of-type {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .left,
@@ -43,22 +52,33 @@ section {
 
 #title_event {
   text-align: center;
-  font-size: 96px;
+  font-size: 108px;
   font-family: 'Finger Paint', sans-serif;
 }
-#title_header {
-  font-family: 'Lato', sans-serif;
+#title_header,
+.section-title {
+  font-family: 'Winky Rough', sans-serif;
   text-align: center;
   font-weight: 400;
   font-size: 36px;
 }
 
 #title_author {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Winky Rough', sans-serif;
   font-weight: 400;
   font-size: 16px;
   margin-top: 16px;
   text-align: right;
+}
+
+#author-img {
+  margin-left: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  margin-top: 20px;
+  margin-right: 40px;
 }
 
 .circle-video {
@@ -79,11 +99,11 @@ section {
 }
 
 #contents {
-  padding: 48px;
+  padding: 48px 24px;
 }
 
 #content-title {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Finger Paint', sans-serif;
   font-weight: 400;
   font-size: 96px;
   margin-bottom: 72px;
@@ -93,8 +113,8 @@ section {
 .link-container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 24px;
+  justify-content: space-evenly;
+  gap: 20px;
 }
 
 .link-container a,
@@ -103,10 +123,15 @@ section {
   text-decoration: none;
 }
 
+.link-container a:first-of-type img {
+  object-fit: cover;
+  object-position: 50% 32%;
+}
+
 .link-text {
   color: white;
   text-align: center;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Winky Rough', sans-serif;
   font-size: 24px;
   margin-top: 12px;
 }
@@ -120,4 +145,79 @@ section {
 }
 .link-container a:hover img {
   box-shadow: 2px 2px 8px white;
+}
+
+#intro {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 10%;
+  gap: 144px;
+}
+
+#intro-img {
+  border: 10px solid white;
+}
+
+#intro-title {
+  font-family: 'Finger Paint', sans-serif;
+  font-weight: 400;
+  font-size: 96px;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+#intro-desc,
+.section-content {
+  font-family: 'Winky Rough', sans-serif;
+  line-height: 150%;
+  font-size: 18px;
+  max-width: 80ch;
+  letter-spacing: 110%;
+  text-align: justify;
+}
+
+#intro-desc::first-letter,
+.section-content::first-letter {
+  font-size: 240%;
+}
+
+.go-to-index-link {
+  position: absolute;
+  right: 64px;
+  bottom: 64px;
+  display: none;
+}
+
+.go-to-index-link:hover {
+  display: block;
+}
+
+.go-to-index-link > button {
+  all: unset;
+  cursor: pointer;
+}
+
+section#contents ~ section {
+  padding: 48px;
+}
+
+.section-title {
+  margin-bottom: 36px;
+}
+
+.section-content {
+  max-width: 120ch;
+  margin: 0 auto;
+}
+
+main:has(section:nth-child(4):hover),
+main:has(section:nth-child(5):hover),
+main:has(section:nth-child(6):hover),
+main:has(section:nth-child(7):hover),
+main:has(section:nth-child(8):hover) {
+  .go-to-index-link {
+    display: block;
+    pointer-events: auto;
+  }
 }
